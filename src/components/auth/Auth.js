@@ -50,7 +50,7 @@ function Auth({ match, history }) {
 
       login(loginResponse);
 
-      history.push("/" + recordId + '/' + meetingId);
+      history.push('/' + recordId + '/' + meetingId);
 
       // console.table(loginResponse);
     } catch (e) {
