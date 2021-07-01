@@ -1,0 +1,66 @@
+$auth-font-size: 1.5rem;
+
+:root {
+    --auth-background-color: var(--white-dark);
+    --auth-color: var(--gray);
+}
+
+.auth-wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.auth-wrapper {
+    background-color: var(--auth-background-color);
+
+    > div {
+        margin: auto;
+        text-align: center;
+
+        font-size: $auth-font-size;
+        color: var(--auth-color);
+        // font-weight: var(--font-weight-bold);
+    }
+
+    .form-signin {
+        max-width: 380px;
+        padding: 15px 35px 45px;
+        margin: 0 auto;
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+
+        .form-signin-heading {
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .form-control {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            font-size: 16px;
+            height: auto;
+            padding: 8px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+            &:focus {
+                z-index: 2;
+            }
+        }
+
+        button[type="submit"] {
+            font-size: 1em;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #e4e4e4;
+            color: #fff;
+            background-color: rgb(255, 99, 71);
+            cursor: pointer;
+        }
+    }
+}

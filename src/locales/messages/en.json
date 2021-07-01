@@ -25,5 +25,9 @@
   "player.search.modal.title": "Search",
   "player.search.modal.subtitle": "Find presentation slides content",
   "player.thumbnails.wrapper.aria": "Thumbnails area",
-  "player.video.wrapper.aria": "Video area"
+  "player.video.wrapper.aria": "Video area",
+  "auth.loading": "Loading...",
+  "auth.wrapper.aria": "Login",
+  "auth.wrapper.signin": "Login",
+  "auth.wrapper.password": "Session password"
 }

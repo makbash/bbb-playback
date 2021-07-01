@@ -13,6 +13,9 @@ import {
 } from 'utils/data';
 import './index.scss';
 
+// AuthContextProvider
+import { AuthProvider } from "./contexts/AuthContext";
+
 const locale = getLocale();
 const messages = getMessages();
 const style = getStyle();
@@ -24,7 +27,11 @@ ReactDOM.render(
       messages={messages[locale]}
     >
       {style ? <link rel="stylesheet" type="text/css" href={style} /> : null}
-      {ROUTER ? <Router /> : <Loader />}
+      {ROUTER ? (
+        <AuthProvider>
+          <Router />
+        </AuthProvider>
+      ) : <Loader />}
     </IntlProvider>
   ),
   document.getElementById('root')

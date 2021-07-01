@@ -25,5 +25,9 @@
   "player.search.modal.title": "Search",
   "player.search.modal.subtitle": "Find presentation slides content",
   "player.thumbnails.wrapper.aria": "Önizleme",
-  "player.video.wrapper.aria": "Video"
+  "player.video.wrapper.aria": "Video",
+  "auth.loading": "Yükleniyor...",
+  "auth.wrapper.aria": "Giriş",
+  "auth.wrapper.signin": "Giriş",
+  "auth.wrapper.password": "Oturum şifresi"
 }

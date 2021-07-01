@@ -19,3 +19,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.env
+.bak/*
+/public/favicon.ico
+/src/styles/assets/logo.png
+/public/presentation/*
