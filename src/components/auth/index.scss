@@ -1,4 +1,4 @@
-$auth-font-size: 1.5rem;
+$auth-font-size: 1.2rem;
 
 :root {
     --auth-background-color: var(--white-dark);
@@ -33,6 +33,19 @@ $auth-font-size: 1.5rem;
         .form-signin-heading {
             margin-bottom: 30px;
             font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .form-response {
+            &.success {
+                color: rgb(0, 255, 0);
+            }
+            &.warning {
+                color: rgb(255, 99, 71);
+            }
+            &.error {
+                color: rgb(255, 0, 0);
+            }
         }
 
         .form-control {

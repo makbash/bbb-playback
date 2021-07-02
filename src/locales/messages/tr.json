@@ -27,7 +27,8 @@
   "player.thumbnails.wrapper.aria": "Önizleme",
   "player.video.wrapper.aria": "Video",
   "auth.loading": "Yükleniyor...",
-  "auth.wrapper.aria": "Giriş",
-  "auth.wrapper.signin": "Giriş",
-  "auth.wrapper.password": "Oturum şifresi"
+  "auth.form.title": "Giriş",
+  "auth.form.desciption": "Oturum kayıtlarını görüntüleyebilmek için oturum şifresini giriniz.",
+  "auth.form.label.signin": "Giriş",
+  "auth.form.label.password": "Oturum şifresi"
 }

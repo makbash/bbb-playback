@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 
-import '../index.scss';
 import './index.scss';
-
 
 import { fetchLogin } from "../../api";
 
 import { useAuth } from "../../contexts/AuthContext";
 
 const intlMessages = defineMessages({
+  title: {
+    id: 'auth.form.title'
+  },
+  heading: {
+    id: 'auth.form.desciption'
+  },
   signin: {
-    id: 'auth.wrapper.signin',
-    description: 'Label for the login',
+    id: 'auth.form.label.signin'
   },
   password: {
-    id: 'auth.wrapper.password',
-    description: 'Label for the password',
+    id: 'auth.form.label.password'
   },
 });
 
@@ -27,12 +29,19 @@ function Auth({ match, history }) {
   const { recordId, meetingId } = match.params;
 
   const [formData, setFormData] = useState({
-    token: meetingId,
     recordId: recordId,
+    meetingId: meetingId,
     password: ""
   })
 
-  const { token, password } = formData;
+  const { password } = formData;
+
+  const [formResponse, setFormResponse] = useState({
+    success: false,
+    message: null,
+  });
+
+  const { success, message } = formResponse;
 
   const onInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -43,7 +52,7 @@ function Auth({ match, history }) {
 
     try {
       const loginResponse = await fetchLogin({
-        token: token,
+        token: meetingId,
         recordId: recordId,
         password: password,
       }, intl.locale);
@@ -51,23 +60,32 @@ function Auth({ match, history }) {
       login(loginResponse);
 
       history.push('/' + recordId + '/' + meetingId);
-
-      // console.table(loginResponse);
     } catch (e) {
-      // bag.setErrors({ general: e.response.data.message });
-      console.error(e.response.data)
+      setFormResponse({
+        ...formResponse,
+        success: e.response.data.success,
+        message: e.response.data.message,
+      })
     }
   }
 
   return (
-    <div className="auth-wrapper" id="auth">
+    <div
+      aria-label={intl.formatMessage(intlMessages.title)}
+      className="auth-wrapper"
+      id="auth"
+    >
+
       <div>
-        <h4>{intl.formatMessage(intlMessages.signin)}</h4>
 
         <form className="form-signin" onSubmit={handleSubmit}>
           <p className="form-signin-heading">
-            Kaydı görüntüleyebilmek için <br />oturum şifresini giriniz.
+            {intl.formatMessage(intlMessages.heading)}
           </p>
+
+          <div className={`form-response ${success ? "success" : "warning"}`}>
+            <p>{message}</p>
+          </div>
 
           <div className="form-control">
             <input
@@ -81,6 +99,7 @@ function Auth({ match, history }) {
 
           <button type="submit">{intl.formatMessage(intlMessages.signin)}</button>
         </form>
+
       </div>
     </div>
   );

@@ -27,7 +27,8 @@
   "player.thumbnails.wrapper.aria": "Thumbnails area",
   "player.video.wrapper.aria": "Video area",
   "auth.loading": "Loading...",
-  "auth.wrapper.aria": "Login",
-  "auth.wrapper.signin": "Login",
-  "auth.wrapper.password": "Session password"
+  "auth.form.title": "Auth",
+  "auth.form.desciption": "Enter the session password to view the session records.",
+  "auth.form.label.signin": "Login",
+  "auth.form.label.password": "Session password"
 }
